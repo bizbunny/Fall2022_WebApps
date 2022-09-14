@@ -48,7 +48,7 @@ const Circle = class Circle {
         this.color = color;
     }
     calcArea(){
-        return this.radius * Math.PI;
+        return (radius*radius * Math.PI);
     }
 }
 
