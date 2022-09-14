@@ -44,11 +44,13 @@ const Homework1 = class Homework1 {
 
 const Circle = class Circle { 
     constructor(radius, color){
-        this.radius = radius;
+        this.radius = parseFloat(radius);
         this.color = color;
     }
     calcArea(){
-        return (radius*radius * Math.PI);
+        if (this.radius > 0.00){
+            return (this.radius*this.radius * Math.PI);
+        }
     }
 }
 
@@ -71,12 +73,11 @@ const Circle = class Circle {
  */
 
 const Student = class Student {
-    constructor(firstName, lastName, gpa, degreeType, grade, graduated){
+    constructor(firstName, lastName, gpa, degreeType){
         this.firstName = firstName;
         this.lastName = lastName;
+        this.gpa = gpa;
         this.degreeType = degreeType;
-        this.grade = grade;
-        this.graduated = graduated;
     }
     grade = undefined;
     graduated = false;
@@ -97,10 +98,12 @@ const Student = class Student {
  */
 
 const Product = class Product {
-    constructor(name, price, availability){
-        this.name = name;
-        this.price = price;
-        this.availability = availability;
+    constructor(input){
+
+        const arr = input.split(",");
+        this.name = arr[0];
+        this.price = parseFloat(arr[1]);
+        this.availability = arr[2];
     }
 
     /**
@@ -115,7 +118,7 @@ const Product = class Product {
      * Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array 
      */
     static inStock = (products) => {
-        return products.find(element => element.availability = "In Stock");
+        return products.find(element => element.availability === "In Stock");
     }
 
 
