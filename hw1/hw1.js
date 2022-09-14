@@ -70,7 +70,17 @@ const Circle = class Circle {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
  */
 
-const Student = class Student { }
+const Student = class Student {
+    constructor(firstName, lastName, gpa, degreeType, grade, graduated){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.degreeType = degreeType;
+        this.grade = grade;
+        this.graduated = graduated;
+    }
+    grade = undefined;
+    graduated = false;
+ }
 
 
 /**
@@ -87,6 +97,11 @@ const Student = class Student { }
  */
 
 const Product = class Product {
+    constructor(name, price, availability){
+        this.name = name;
+        this.price = price;
+        this.availability = availability;
+    }
 
     /**
      * *****************
@@ -99,7 +114,9 @@ const Product = class Product {
      * This can be implmeneted in one line.
      * Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array 
      */
-    static inStock = (products) => {}
+    static inStock = (products) => {
+        return products.find(element => element.availability = "In Stock");
+    }
 
 
     /**
