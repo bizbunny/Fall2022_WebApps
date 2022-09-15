@@ -118,7 +118,7 @@ const Product = class Product {
      * Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array 
      */
     static inStock = (products) => {
-        return products.find(element => element.availability === "In Stock");
+        return products.filter(element => element.availability === "In Stock");
     }
 
 
