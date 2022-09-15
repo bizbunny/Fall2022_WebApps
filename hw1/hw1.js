@@ -134,7 +134,7 @@ const Product = class Product {
      * Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array 
      */
     static halfOff = (products) => {
-        return products.map((element) => element.price * 0.5); 
+        return products.map((element) => new Product(`${element.name},${parseFloat(element.price * 0.5)},${element.availability}`)); 
     }
 
     /**
@@ -150,7 +150,9 @@ const Product = class Product {
      * Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array 
      * Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat (currency formatting)
      */
-    static printProducts = (products) => {}
+    static printProducts = (products) => {
+        console.log(`Product: ${products.name}, Cost: ${products.price}, Available: ${products.availability}`);
+    }
 
  };
 
