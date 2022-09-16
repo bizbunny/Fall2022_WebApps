@@ -151,7 +151,7 @@ const Product = class Product {
      * Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat (currency formatting)
      */
     static printProducts = (products) => {
-        console.log(`Product: ${products.name}, Cost: ${products.price}, Available: ${products.availability}`);
+        console.log(`Product: ${products.name}, Cost: ${new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD' }).format(products.price)}, Available: Yes`);
     }
 
  };
